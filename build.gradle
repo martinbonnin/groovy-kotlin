@@ -1,0 +1,20 @@
+plugins {
+    id("com.sample")
+}
+repositories {
+    mavenCentral()
+}
+
+sample {
+    println("sample::this is " + this)
+    println("sample::owner is " + owner)
+
+    println("extensionProp is " + extensionProp)
+    doOnStuff {
+        println("stuff::this is " + this)
+        // stuff::owner is build_epjjkxrpl7ubwxqnflryr8bc9$_run_closure2@880e6a5
+        println("stuff::owner is " + owner)
+        // Could not get unknown property 'prop' for extension 'sample' of type SampleExtension.
+        println("prop is " + prop)
+    }
+}
